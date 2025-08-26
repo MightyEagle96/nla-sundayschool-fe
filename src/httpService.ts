@@ -2,7 +2,7 @@ import axis from "axios";
 
 export const httpService = axis.create({
   baseURL: "http://localhost:4000/api",
-  //withCredentials: true,
+  withCredentials: true,
   timeout: 10000,
 });
 

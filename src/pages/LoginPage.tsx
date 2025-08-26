@@ -30,16 +30,17 @@ function LoginPage() {
 
     const { data, status } = await httpService.post("auth/login", userData);
 
-    if (status === 200) console.log(data);
-    else toast.error(data);
+    if (status === 200) {
+      window.location.href = "/";
+    } else toast.error(data);
 
     setLoading(false);
   };
   return (
     <div className="container">
-      <div className="d-flex justify-content-center pt-3">
-        <div className="col-lg-4 w-100">
-          <div>
+      <div className="d-flex justify-content-center row pt-3">
+        <div className="col-lg-4 ">
+          <div className="">
             <div className="text-center">
               <img src={logo} alt="" height={100} />
               <div className="mt-3">
@@ -58,8 +59,6 @@ function LoginPage() {
                   Sunday School Department
                   <br /> E-Examination Portal
                 </Typography>
-                {/* <h4>RCCG NEW LIFE ASSEMBLY</h4>
-                <h6>E-examination portal</h6> */}
               </div>
             </div>
             <form onSubmit={loginData}>
@@ -88,6 +87,7 @@ function LoginPage() {
                   color="success"
                   endIcon={<Login />}
                   loading={loading}
+                  loadingPosition="end"
                 >
                   Login
                 </Button>
