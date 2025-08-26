@@ -20,10 +20,7 @@ httpService.interceptors.request.use(
 httpService.interceptors.response.use(
   (response) => {
     // ✅ Success case: always wrap in a consistent object
-    return {
-      status: response.status,
-      data: response.data,
-    };
+    return response;
   },
   (error) => {
     if (error.response) {

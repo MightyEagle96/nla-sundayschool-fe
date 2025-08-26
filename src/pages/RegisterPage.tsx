@@ -80,6 +80,12 @@ function RegisterPage() {
       setError(true);
       return;
     }
+
+    if (errors.email || errors.phoneNumber) {
+      toast.error("Email or Phone number is invalid");
+      setError(true);
+      return;
+    }
     if (
       !userData.firstName ||
       !userData.lastName ||
@@ -311,9 +317,7 @@ function RegisterPage() {
               endIcon={<Person />}
               color="success"
               fullWidth
-              disabled={
-                error || shortPassword || errors.email || errors.phoneNumber
-              }
+              disabled={error || shortPassword}
               onClick={showPreview}
             >
               Preview Registration

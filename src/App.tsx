@@ -6,18 +6,14 @@ import "@fontsource/roboto/700.css";
 
 import MainRoute from "./routes/MainRoute";
 import { ToastContainer } from "react-toastify";
-import { AppUserContext } from "./contexts/AppUserContext";
-import { useState } from "react";
+
 import "./App.css";
 
 function App() {
-  const [appUser, setAppUser] = useState(null);
   return (
     <>
-      <AppUserContext.Provider value={{ appUser, setAppUser }}>
-        <ToastContainer />
-        <MainRoute />
-      </AppUserContext.Provider>
+      <ToastContainer />
+      <MainRoute />
     </>
   );
 }

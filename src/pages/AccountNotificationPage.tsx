@@ -1,5 +1,3 @@
-import React from "react";
-
 function AccountNotificationPage() {
   return <div>AccountNotificationPage</div>;
 }

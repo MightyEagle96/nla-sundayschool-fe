@@ -1,16 +1,17 @@
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../assets/logo.png";
-import { AppUserContext } from "../contexts/AppUserContext";
-import { useContext, useState } from "react";
+
+import { useState } from "react";
 import httpService from "../httpService";
 import { Logout } from "@mui/icons-material";
+import { useAppUser } from "../contexts/AppUserContext";
 
 function NavbarComponent() {
-  const { appUser } = useContext(AppUserContext);
+  const { appUser } = useAppUser();
   const [loading, setLoading] = useState(false);
 
   const logout = async () => {

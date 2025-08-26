@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { AppUserContext } from "../contexts/AppUserContext";
+import { useEffect, useState } from "react";
+import { useAppUser } from "../contexts/AppUserContext";
 import { getUser } from "./auth";
 
 export function useAuth() {
-  const { appUser, setAppUser } = useContext(AppUserContext);
+  const { appUser, setAppUser } = useAppUser();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
